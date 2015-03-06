@@ -62,6 +62,14 @@ class Hand {
 
         if(cards.count > 1){
             for l in 2...cards.count{
+                if(cards[l-1] == 1 ){
+                    
+                    //Choosing via taking user choice from console
+                    // Referened from Google
+                    println("Do you want to choose Ace as 1 ?")
+                    var fh = NSFileHandle.fileHandleWithStandardInput()
+                    
+                }
                 
                 cardString = cardString + " , " + String(cards[l-1])
             }

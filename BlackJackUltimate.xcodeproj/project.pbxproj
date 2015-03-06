@@ -20,6 +20,7 @@
 		11DB7FD01AA7DB800088DF18 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DB7FCF1AA7DB800088DF18 /* Singleton.swift */; };
 		11DB7FD41AA7ED8A0088DF18 /* HandStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DB7FD31AA7ED8A0088DF18 /* HandStatus.swift */; };
 		11DB7FD61AA94FB10088DF18 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DB7FD51AA94FB10088DF18 /* Dealer.swift */; };
+		11DB80081AA9D8360088DF18 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DB80071AA9D8360088DF18 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		11DB7FCF1AA7DB800088DF18 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		11DB7FD31AA7ED8A0088DF18 /* HandStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandStatus.swift; sourceTree = "<group>"; };
 		11DB7FD51AA94FB10088DF18 /* Dealer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
+		11DB80071AA9D8360088DF18 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				11DB7FCF1AA7DB800088DF18 /* Singleton.swift */,
 				11DB7FD31AA7ED8A0088DF18 /* HandStatus.swift */,
 				11DB7FD51AA94FB10088DF18 /* Dealer.swift */,
+				11DB80071AA9D8360088DF18 /* HomeViewController.swift */,
 			);
 			path = BlackJackUltimate;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				11DB7FD61AA94FB10088DF18 /* Dealer.swift in Sources */,
 				11DB7FD01AA7DB800088DF18 /* Singleton.swift in Sources */,
 				11DB7FCC1AA7B20E0088DF18 /* Hand.swift in Sources */,
+				11DB80081AA9D8360088DF18 /* HomeViewController.swift in Sources */,
 				114C9AEE1AA69A75007AD4B3 /* ViewController.swift in Sources */,
 				11DB7FC81AA7B1A50088DF18 /* Card.swift in Sources */,
 				11DB7FCE1AA7B2360088DF18 /* Player.swift in Sources */,

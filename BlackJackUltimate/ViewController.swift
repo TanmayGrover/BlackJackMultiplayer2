@@ -20,9 +20,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var p3Cards: UILabel!
     
+    @IBOutlet weak var p4Cards: UILabel!
     @IBOutlet weak var player2Bet: UITextField!
     @IBOutlet weak var player1Bet: UITextField!
     
+    @IBOutlet weak var player3Bet: UITextField!
+    
+    @IBOutlet weak var player4Bet: UITextField!
     @IBOutlet weak var p1Status: UILabel!
     
     
@@ -56,6 +60,10 @@ class ViewController: UIViewController {
     
     var round : Int = 1
     
+    var i1 : Int = 0
+    var j1 : Int = 0
+    
+        
     
     
     
@@ -164,7 +172,7 @@ class ViewController: UIViewController {
 
             
             calculateBet()
-            
+            dealerFlip = false
             
             
         }
@@ -199,6 +207,8 @@ class ViewController: UIViewController {
             
         case 2 : return p3Cards
             
+        case 3 : return p4Cards
+            
         default :
             return p1Cards
             
@@ -214,6 +224,10 @@ class ViewController: UIViewController {
             
         case 1 : return player2Bet
             
+        case 2 : return player3Bet
+            
+        case 4 : return player4Bet
+            
             //case 2 : return p3Cards
             
         default :
@@ -225,19 +239,18 @@ class ViewController: UIViewController {
     
     
     func calculateBet() {
-        var i : Int = 0
-        var j : Int = 0
+        
         
         
         for players in playerArray{
             
             if(dealerObject.hand.score > 21 && players.hand.score <= 21) {
-                players.hand.money = players.hand.money + getUITextField(i).text.toInt()!
+                players.hand.money = players.hand.money + getUITextField(i1).text.toInt()!
             }
             
             else if (dealerObject.hand.score == 21 && dealerObject.hand.score > players.hand.score){
              
-                players.hand.money = players.hand.money - getUITextField(i).text.toInt()!
+                players.hand.money = players.hand.money - getUITextField(i1).text.toInt()!
                 
             }
             
@@ -246,26 +259,30 @@ class ViewController: UIViewController {
             }
             
             else if (players.hand.status == statusOfHand.blackjack){
-                players.hand.money = players.hand.money + getUITextField(i).text.toInt()!
+                players.hand.money = players.hand.money + getUITextField(i1).text.toInt()!
             }
             else if ( players.hand.status == statusOfHand.busted){
-                players.hand.money = players.hand.money - getUITextField(i).text.toInt()!
+                players.hand.money = players.hand.money - getUITextField(i1).text.toInt()!
             }
             
             else if (players.hand.score < 21 && dealerObject.hand.score < 21 && players.hand.score > dealerObject.hand.score ){
-                players.hand.money = players.hand.money + getUITextField(i).text.toInt()!
+                players.hand.money = players.hand.money + getUITextField(i1).text.toInt()!
             }
+            else if (players.hand.score < 21 && dealerObject.hand.score < 21 && players.hand.score < dealerObject.hand.score ){
+                players.hand.money = players.hand.money - getUITextField(i1).text.toInt()!
+            }
+
             
-            i++
+            i1++
             
         }
         
         var statusString : String = ""
         for p in playerArray{
             
-            var playerStatus : String = "P\(j+1) has \(p.hand.money)"
+            var playerStatus : String = "P\(j1+1) has \(p.hand.money)"
             statusString = statusString + "  " + playerStatus
-            j++
+            j1++
         }
         
         gameStatus.text = statusString
@@ -284,10 +301,14 @@ class ViewController: UIViewController {
             getUITextField(k).text = ""
             dealerCards.text = ""
             gameStatus.text = ""
-            
+            p.hand.cards.removeAll()
             k++
         }
-        
+
+        dealerObject.hand.cards.removeAll()
+        value = 0
+        i1 = 0
+        j1 = 0
         
         if (round > 5){
             round = 0
