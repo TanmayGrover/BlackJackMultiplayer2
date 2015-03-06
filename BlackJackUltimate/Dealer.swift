@@ -22,5 +22,11 @@ class Dealer {
         hand.cards.append(Singelton.sharedInstance.sdeck.removeAtIndex(0))
     }
     
+    func setUpDealerAgainHand(){
+        
+        hand.cards.append(Singelton.sharedInstance.sdeck.removeAtIndex(0))
+        
+    }
+
         
 }

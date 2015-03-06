@@ -51,6 +51,7 @@ class Deck{
             deck[j]=temp
             
         }
+        Singelton.sharedInstance.sdeck=deck
     }
     //returns first card for player
     func getCard1Player()-> (Int) {

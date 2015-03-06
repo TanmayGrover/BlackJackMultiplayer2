@@ -12,7 +12,7 @@ class Hand {
     
     var cards: [Int]
     
-    var bet:Int = 1
+    var money:Int
     
     var dFlip : Bool = false
     
@@ -29,7 +29,7 @@ class Hand {
     }
     
     init(){
-        bet = 0
+        money = 100
         cards = []
         //status = "none"
         status = statusOfHand.stand
@@ -58,9 +58,11 @@ class Hand {
     func getAllCards() -> String {
         
         var cardString = " "
-        
+        cardString = String(cards[0])
+
         if(cards.count > 1){
-            for l in 1...cards.count{
+            for l in 2...cards.count{
+                
                 cardString = cardString + " , " + String(cards[l-1])
             }
         }
